@@ -34,3 +34,11 @@ end
 function AdvocateComponent:GetCurrentPos()
     return self.CurrentPosX, self.CurrentPosY
 end
+
+--- Sets the alternative position of the component
+-- @param _x number: The alternative position on the screen's x-axis
+-- @param _y number: The alternative position on the screen's y-axis
+function AdvocateComponent:SetAltPos(_x, _y)
+    self.AltPosX = _x
+    self.AltPosY = _y
+end

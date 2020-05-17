@@ -17,3 +17,7 @@ function AdvocateComponent.new(_posX, _posY)
     setmetatable(self, AdvocateComponent)
     return self
 end
+
+function AdvocateComponent:GetCurrentPos()
+    return self.CurrentPosX, self.CurrentPosY
+end

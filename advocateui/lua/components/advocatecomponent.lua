@@ -3,6 +3,9 @@ AdvocateComponent = {}
 AdvocateComponent.__index = AdvocateComponent
 
 function AdvocateComponent.new(_posX, _posY)
+    assert(type(_posX) == "number", _posX || "nil" .. " is not a number")
+    assert(type(_posY) == "number", _posY || "nil" .. " is not a number")
+
     local self = {}
     
     -- The target position of the component
@@ -39,8 +42,8 @@ end
 -- @param _x number: The alternative position on the screen's x-axis
 -- @param _y number: The alternative position on the screen's y-axis
 function AdvocateComponent:SetAltPos(_x, _y)
-    assert(type(_x) == "number", _x .. " is not a number")
-    assert(type(_y) == "number", _y .. " is not a number")
+    assert(type(_x) == "number", _x || "nil" .. " is not a number")
+    assert(type(_y) == "number", _y || "nil" .. " is not a number")
     self.AltPosX = _x
     self.AltPosY = _y
 end

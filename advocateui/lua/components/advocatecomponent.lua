@@ -2,7 +2,7 @@
 AdvocateComponent = {}
 AdvocateComponent.__index = AdvocateComponent
 
-function AdvocateComponent:new(_posX, _posY)
+function AdvocateComponent.new(_posX, _posY)
     local self = {
         PosX = _posX || 0,
         PosY = _posY || 0,

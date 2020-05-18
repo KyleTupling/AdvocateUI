@@ -31,6 +31,13 @@ function AdvocateComponent.new(_posX, _posY)
     return self
 end
 
+--- Fetches the target position of the component
+-- @return number: The position on the screen's x-axis
+-- @return number: The position on the screen's y-axis
+function AdvocateComponent:GetTargetPos()
+    return self.PosX, self.PosY
+end
+
 --- Fetches the current position of the component
 -- @return number: The position on the screen's x-axis
 -- @return number: The position on the screen's y-axis

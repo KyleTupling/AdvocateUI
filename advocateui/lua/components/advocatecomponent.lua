@@ -46,6 +46,11 @@ function AdvocateComponent:Draw()
         if(self.AltPosX) then self.CurrentPosX = Lerp(10 * FrameTime(), self.CurrentPosX, self.AltPosX) end
         if(self.AltPosY) then self.CurrentPosY = Lerp(10 * FrameTime(), self.CurrentPosY, self.AltPosY) end
     end
+
+    -- Draw all children of component
+    for i = 1, #self.Children do
+        self.Children[i].Draw()
+    end
 end
 
 --- Toggles the component's display property

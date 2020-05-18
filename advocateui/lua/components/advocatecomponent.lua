@@ -34,6 +34,17 @@ function AdvocateComponent.new(_posX, _posY)
     return self
 end
 
+--- Toggles the component's display property
+-- This will swap the target position between the default position and the alternative position (granted it is defined)
+-- @return error (IF FAILED)
+function AdvocateComponent:Toggle()
+    if(self.AltPosX || self.AltPosY) then
+        self.IsDisplayed = !self.IsDisplayed
+    else
+        return error("To toggle this component you must define either an alternative x-position or an alternative y-position.")
+    end
+end
+
 --- Fetches the target position of the component
 -- @return number: The position on the screen's x-axis
 -- @return number: The position on the screen's y-axis

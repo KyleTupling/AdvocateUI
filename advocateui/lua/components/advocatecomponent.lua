@@ -7,6 +7,9 @@ function AdvocateComponent.new(_posX, _posY)
     assert(type(_posY) == "number", _posY || "nil" .. " is not a number")
 
     local self = {}
+
+    -- The component's parent
+    self.Parent = nil
     
     -- The target position of the component
     self.PosX = _posX || 0

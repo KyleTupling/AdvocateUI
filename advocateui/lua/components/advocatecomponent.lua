@@ -34,6 +34,20 @@ function AdvocateComponent.new(_posX, _posY)
     return self
 end
 
+--- Draws the component to the client's screen
+-- This method will certainly be overridden but the included algorithms should still be executed to display the component
+-- in the correct position
+function AdvocateComponent:Draw()
+    if(self.IsDisplayed) then
+        -- Use linear interpolation to smooth out movement between positions
+        self.CurrentPosX = Lerp(10 * FrameTime(), self.CurrentPosX, self.PosX)
+        self.CurrentPosY = Lerp(10 * FrameTime(), self.CurrentPosY, self.PosY)
+    else
+        if(self.AltPosX) then self.CurrentPosX = Lerp(10 * FrameTime(), self.CurrentPosX, self.AltPosX) end
+        if(self.AltPosY) then self.CurrentPosY = Lerp(10 * FrameTime(), self.CurrentPosY, self.AltPosY) end
+    end
+end
+
 --- Toggles the component's display property
 -- This will swap the target position between the default position and the alternative position (granted it is defined)
 -- @return error (IF FAILED)
